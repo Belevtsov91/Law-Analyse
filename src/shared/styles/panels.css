@@ -1,0 +1,53 @@
+.desktop-panel,
+.drawer-panel {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background: var(--navy-mid);
+}
+
+.desktop-panel {
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+}
+
+.panel-head,
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 15px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-head h2,
+.drawer-head h2 {
+  margin: 6px 0 0;
+  color: var(--cream);
+  font: 700 12px/1.5 var(--font-title);
+}
+
+.drawer-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(8, 14, 22, 0.78);
+}
+
+.drawer-overlay[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 21;
+  transition: transform 0.3s ease;
+}
+
+.drawer-panel--left { left: 0; border-right: 1px solid var(--border); }
+.drawer-panel--right { right: 0; border-left: 1px solid var(--border); }
